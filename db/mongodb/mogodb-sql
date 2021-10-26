@@ -1,0 +1,11 @@
+db.member.update({ 'properties': { $elemMatch: { 'name': '人群'} } , 
+'phone':/^131/ }, 
+{ $set: { 'properties.$.value': 'LFP3'}}, false, true);
+
+
+db.getCollection('member').count({ 'properties': { $elemMatch: { 'value': 'LFP2'} },
+'phone':/^121/})
+
+
+db.getCollection('member').count({ 'properties': { $elemMatch: { 'value': 'LFP1'} },
+'phone':/^131/})
